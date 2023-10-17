@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!-- Designed and coded by Tayven Stover 2023 -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tayven Stover</title>
+    <link rel="stylesheet" href="Stylesheets/master.css">
+    <script src="https://kit.fontawesome.com/382b2907de.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="mainContainer">
+      <div class="leadContainer">
+        <h1 id="pageTitle"><u>Tayven Stover</u></h1>
+        <p>Programmer - Student - Tutor</p>
+        <img src="Me.jpeg" alt="A picture of me." style="width: 35%; filter: grayscale(100%);">
+      </div>
+      <div class="aboutContainer">
+        <h1 id="aboutTitle">About me</h1>
+        <hr>
+        <p>
+          My name is Tayven Stover, and my fascination with programming began at a young age. Over the past six years, this interest has developed into a deep passion, leading me to attain proficiency in various programming languages.
+        </p>
+
+        <p>
+          Currently, I am deeply involved in an academic journey at a community college, where I am dedicated to expanding my knowledge and refining my skills in computer science. However, my aspirations extend beyond the academic realm. A significant driving force behind my commitment to programming is my desire to share this enriching journey with others. It's this motivation that inspired me to venture into starting a tutoring business. This endeavor not only supports my academic pursuits but also enables me to instill the same fervor for programming in others that I hold.
+        </p>
+        <p>
+          I'd love for you to be part of this adventure of learning, coding, and diving into the fascinating world of programming. Together, we can explore the immense potential of this ever-evolving field and create something truly amazing.
+        </p>
+        <div class="skills">
+          <h2>Programming Languages:</h2>
+          <div class="description">
+            <h3>Python:</h3>
+            <ul>
+              <li>High-level programming language</li>
+              <li>Known for its simplicity and versatility</li>
+              <li>Used in web development, data analysis, AI, and more</li>
+            </ul>
+          </div>
+
+          <div class="description">
+            <h3>Java:</h3>
+            <ul>
+              <li>Object-oriented programming language</li>
+              <li>Used for applications across multiple platforms</li>
+              <li>Known for platform independence and robustness</li>
+            </ul>
+          </div>
+
+          <div class="description">
+            <h3>Web Languages (HTML/CSS/JavaScript):</h3>
+            <ul>
+              <li>HTML structures content</li>
+              <li>CSS styles layout and presentation</li>
+              <li>JavaScript adds interactivity and dynamic behavior</li>
+            </ul>
+          </div>
+        </div>
+        <div class="levels">
+          <h2>Skill Levels:</h2>
+          <ul>
+            <li>Python (High Level)</li>
+            <li>Java (Intermediate)</li>
+            <li>HTML/CSS/JavaScript (Intermediate)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pricingContainer">
+        <h1 id="pricingTitle">Pricing</h1>
+        <hr>
+        <div class="pricingSection">
+          <div class="pricingItem">
+            <h3>Online Tutoring</h3>
+            <p>Flexible online learning, choose what works best for you.</p>
+            <p>Convenient online sessions.</p>
+            <br>
+            <div class="price">$32 - $38/hour</div>
+            <button type="button" name="button" class="bookButton"
+            onclick="scrollToSection('contactTitle'), changeServiceValue('online')">Book</button>
+          </div>
+          <div class="pricingItem">
+            <h3>One-on-One Tutoring</h3>
+            <p>Personalized sessions tailored to your needs.</p>
+            <p>Learn at your own pace, from beginner to advanced levels.</p>
+            <div class="price">$34/hour</div>
+            <button type="button" name="button" class="bookButton"
+            onclick="scrollToSection('contactTitle'), changeServiceValue('inPerson')">Book</button>
+          </div>
+          <div class="pricingItem">
+            <h3>Customized Curriculum</h3>
+            <p>Unique curriculum designed just for you.</p>
+            <p>More in-depth teaching and curriculum planning.</p>
+            <div class="price">$38/hour</div>
+            <button type="button" name="button" class="bookButton"
+            onclick="scrollToSection('contactTitle'), changeServiceValue('customCurriculum')">Book</button>
+          </div>
+        </div>
+      </div>
+      <div class="projectContainer">
+        <h1 id="projectsTitle">My Projects</h1>
+        <hr>
+        <div class="projectSection">
+          <a href="https://github.com/MeeskaMooska/Macro_Maker"><div class="projectItem">
+            <img src="macromaker-image.png" alt="An image of a project">
+            <button type="button" name="button" class="projectButton">Macro Maker</button>
+          </div></a>
+          <a href="https://github.com/MeeskaMooska/MessagingApp"><div class="projectItem">
+            <img src="messaging-image.png" alt="An image of a project">
+            <button type="button" name="button" class="projectButton">TCP Messaging</button>
+          </div></a>
+          <a href="https://github.com/MeeskaMooska/Calculator"><div class="projectItem">
+            <img src="calc-image.png" alt="An image of a project">
+            <button type="button" name="button" class="projectButton">Calculator</button>
+          </div></a>
+          <a href="https://github.com/MeeskaMooska/SpeedReader"><div class="projectItem">
+            <img src="speedreader-image.png" alt="An image of a project">
+            <button type="button" name="button" class="projectButton">Speed Reader</button>
+          </div></a>
+        </div>
+      </div>
+      <div class="contactContainer">
+        <h1 id="contactTitle">Contact</h1>
+        <hr>
+        <form action="thank-you" method="POST" method="post" data-netlify="true">
+          <input type="text" name="email" placeholder="Email" style="margin-top: 30px;" class="contactInput" onkeydown="preventEnterSubmit(event)">
+          <input type="tel" name="phoneNumber" placeholder="Phone number" class="contactInput" onkeydown="preventEnterSubmit(event)">
+          <label for="services">Desired Service:</label>
+          <select name="services" id="services" class="contactInput" onkeydown="preventEnterSubmit(event)">
+            <option value="none">None</option>
+            <option value="online">Online</option>
+            <option value="inPerson">In-person</option>
+            <option value="customCurriculum">Custom Curriculum</option>
+          </select>
+          <textarea placeholder="Message" name="message" rows="8" cols="80" class="contactInput"></textarea>
+          <input type="submit" name="submit" value="submit">
+        </form>
+      </div>
+      <div class="footer">
+        <a href="https://github.com/MeeskaMooska"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61550989623982"><i class="fa-brands fa-facebook"></i></a>
+        <p>Designed by Tayven Stover.</p>
+      </div>
+    </div>
+    <div class="sidebar">
+      <div class="sidebarContentContainer" onclick="scrollToSection('pageTitle')">
+        <i class="fa-solid fa-house"></i>
+        <h2>Home</h2>
+      </div>
+      <div class="sidebarContentContainer" onclick="scrollToSection('aboutTitle')">
+        <i class="fa-solid fa-person"></i>
+        <h2>About</h2>
+      </div>
+      <div class="sidebarContentContainer" onclick="scrollToSection('pricingTitle')">
+        <i class="fa-solid fa-money-check-dollar"></i>
+        <h2>Pricing</h2>
+      </div>
+      <div class="sidebarContentContainer" onclick="scrollToSection('projectsTitle')">
+        <i class="fa-solid fa-newspaper"></i>
+        <h2>Projects</h2>
+      </div>
+      <div class="sidebarContentContainer" onclick="scrollToSection('contactTitle')">
+        <i class="fa-solid fa-envelope"></i>
+        <h2>Contact</h2>
+      </div>
+    </div>
+    <script src="Javascript/engine.js" charset="utf-8"></script>
+  </body>
+</html>
