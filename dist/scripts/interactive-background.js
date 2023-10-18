@@ -43,60 +43,28 @@ function moveLine() {
 
     // Stroke it (Do the Drawing)
     ctx.stroke();
-
-    if ((Math.floor(Math.random() * 2)) === 0) {
-        x++;
-    } else {
-        x--;
-    }
-
-    if ((Math.floor(Math.random() * 2)) === 1) {
-        y++;
-    } else {
-        y--;
-    }
-
-    console.log(x);
-    setTimeout(function () {
-        requestAnimationFrame(moveLine);
-    }, 100);
-}
-const start = { x: 0, y: 0 };
-
-function drawCircle() {
-    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-    ctx.beginPath();
-    ctx.fillStyle = "#1aff00";
-    ctx.arc(x, y, 4, 0, 2 * Math.PI);
-    ctx.fill();
-
-    if ((Math.floor(Math.random() * 2)) === 0) {
-        x++;
-    } else {
-        x--;
-    }
-
-    if ((Math.floor(Math.random() * 2)) === 1) {
-        y++;
-    } else {
-        y--;
-    }
-
-    setTimeout(function () {
-        requestAnimationFrame(drawCircle);
-    }, 100);
-}
-
-function getRandomDirection() {
-    return Math.random() * 2 * Math.PI;
 }
 
 function moveRandomly() {
-    const start = { x: 0, y: 0 };
+    // TODO: Change positional offset when this is changed
+    const offsetSum = 50;
+
+    // Generate start position
+    min = Math.ceil(4); // No less than the radius of the circle
+    maxX = Math.floor(window.innerWidth); // No more than the width of the window
+    maxY = Math.floor(window.innerHeight); // No more than the height of the window
+    const xStartPosition = Math.floor(Math.random() * (maxX - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
+    const yStartPosition = Math.floor(Math.random() * (maxY - min + 1) + min); 
+
+    // Generate end position
+    const xPositionalOffset = Math.floor(Math.random() * (8 - 22 + 1) + min)
+    const yPositionalOffset = offsetSum - xPositionalOffset;
+
+    const start = { x: xStartPosition, y: yStartPosition };
     const control1 = { x: 8, y: 10 };
     const control2 = { x: 20, y: 22 };
-    const end = { x: 19, y: 11 };
-    const segments = 30;
+    const end = { x: xPositionalOffset, y: yPositionalOffset };
+    const segments = 60;
 
     const bezierPoints = calculateBezierCurvePoints(start, control1, control2, end, segments);
 
@@ -110,9 +78,8 @@ function moveRandomly() {
             ctx.fillStyle = "#1aff00";
             ctx.arc(point.x, point.y, 4, 0, 2 * Math.PI);
             ctx.fill();
-            console.log("here", point);
             i++;
-            setTimeout(drawPoint, 100);
+            setTimeout(drawPoint, 40);
         }
     }
 
