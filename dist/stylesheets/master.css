@@ -1,21 +1,259 @@
-:root {
-    --dark-grey: #373737;
-}
-
-html,
 body {
+    font-family: Verdana;
+    margin: 0px;
+    transition: 1s;
+  }
+  
+  .mainContainer {
+    position: absolute;
+    width: 90%;
+  }
+  
+  hr {
+    width: 20%;
+    float: left;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  
+  /*------------------------------ Lead Container ------------------------------*/
+  .leadContainer {
+    text-align: center;
+  }
+  
+  .leadContainer h1 {
+    font-size: 4em;
+    font-weight: 100;
+    margin-top: 1%;
+  }
+  
+  /*------------------------------ About Container ------------------------------*/
+  .aboutContainer {
+    margin-left: 10%;
+    margin-top: 5%;
+    width: 80%;
+  }
+  
+  .aboutContainer p {
+    margin-top: 30px;
+    text-align: justify;
+  }
+  
+  /*---------------------------- Pricing Container ----------------------------*/
+  .pricingContainer {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%;
+  }
+  
+  .pricingSection {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .pricingItem {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: calc(33.33% - 30px);
+    text-align: center;
+  }
+  
+  .pricingItem h3 {
+    margin-top: 0;
+  }
+  
+  .pricingItem .price {
+    font-size: 24px;
+    font-weight: bold;
+    margin: auto 0 10px 0;
+  }
+  
+  .bookButton {
+    width: 100%;
+    background: white;
+    border: solid 2px black;
+    font-size: 1em;
+    padding: 10px 0px 10px 0px;
+    transition: .5s;
+    cursor: pointer;
+  }
+  
+  .bookButton:hover {
+    background: black;
+    color: white;
+  }
+  
+  /*------------------------------ Projects Code ------------------------------*/
+  .projectContainer {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%;
+  }
+  
+  .projectSection {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    gap: 20px;
+  }
+  
+  .projectItem {
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;
+    transition: .5s;
+    cursor: pointer;
+  }
+  
+  .projectItem:hover img {
+    filter: grayscale(100%);
+  }
+  
+  .projectItem:hover {
+    background: black;
+    color: white;
+  }
+  
+  .projectItem:hover .projectButton{
+    background: black;
+    color: white;
+  }
+  
+  .projectItem:nth-child(4) {
+    grid-row-start: 1;
+    grid-row-end: span 1;
+    grid-column-start: 1;
+    grid-column-end: span 1;
+  }
+  
+  
+  .projectItem img {
+    width: 100%;
+    margin: 0px;
+    transition: .5s;
+  }
+  
+  .projectButton {
+    width: 100%;
+    background: white;
+    border: 0px;
+    border-top: 1px solid black;
+    font-size: 1em;
+    padding: 10px 0px 0px 0px;
+    transition: .5s;
+    margin-top: -4px;
+    transition: .5s;
+    cursor: pointer;
+  }
+  
+  /*------------------------------ Contact Code ------------------------------*/
+  .contactContainer {
+    margin-left: 10%;
+    margin-top: 5%;
+    width: 80%;
+  }
+  
+  .contactInput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  .contactContainer select {
+    background-color: white;
+  }
+  
+  .contactContainer textarea {
+    height: 100px;
+    font-family: Verdana;
+  }
+  
+  .contactContainer input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background: black;
+    color: white;
+    font-size: 1em;
+    border: 2px black solid;
+    cursor: pointer;
+    transition: .5s;
+  }
+  
+  .contactContainer input[type="submit"]:hover {
+    background: white;
+    color: black;
+  }
+  
+  
+  /*------------------------------ Footer Code ------------------------------*/
+  .footer {
+    width: 100%;
+    background: #222; /* Dark background color */
+    color: #aaa; /* Lighter text color */
+    padding: 20px;
+    display: flex;
+    margin-top: 2%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .footer i {
+    font-size: 24px;
+    margin: 0 10px;
+    transition: .5s;
+  }
+  
+  .footer i:hover {
+    color: white;
+  }
+  
+  .footer a:visited {
+    color: #aaa;
+  }
+  
+  .footer p {
     margin: 0;
-    padding: 0;
+  }
+  
+  /*------------------------------ Sidebar Code ------------------------------*/
+  .sidebar {
+    position: fixed;
+    width: 10%;
     height: 100%;
     background: black;
-}
-
-#canvas {
-    width: 0;
-    height: 0;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: -webkit-crisp-edges;
-    image-rendering: pixelated;
-    image-rendering: crisp-edges;
-    background: yellow;
-}
+    right: 0%;
+    cursor: pointer;
+  }
+  
+  .sidebarContentContainer {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: .5s;
+  }
+  
+  .sidebarContentContainer:hover {
+    background: grey;
+  }
+  
+  .sidebarContentContainer i {
+    font-size: 2em;
+  }
+  
+  .sidebarContentContainer h2 {
+    font-size: 1em;
+  }
+  
+  .sidebarContentContainer img {
+    width: 100%;
+  }
+  
