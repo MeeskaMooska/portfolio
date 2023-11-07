@@ -114,18 +114,11 @@
     <div class="contactContainer">
       <h1 id="contactTitle">Contact</h1>
       <hr>
-      <form action="thank-you" method="POST" method="post" data-netlify="true">
+      <form action="thank-you" method="POST" method="post">
         <input type="text" name="email" placeholder="Email" style="margin-top: 30px;" class="contactInput"
           onkeydown="preventEnterSubmit(event)">
         <input type="tel" name="phoneNumber" placeholder="Phone number" class="contactInput"
           onkeydown="preventEnterSubmit(event)">
-        <label for="services">Desired Service:</label>
-        <select name="services" id="services" class="contactInput" onkeydown="preventEnterSubmit(event)">
-          <option value="none">None</option>
-          <option value="online">Online</option>
-          <option value="inPerson">In-person</option>
-          <option value="customCurriculum">Custom Curriculum</option>
-        </select>
         <textarea placeholder="Message" name="message" rows="8" cols="80" class="contactInput"></textarea>
         <input type="submit" name="submit" value="submit">
       </form>
@@ -150,7 +143,7 @@
         <h2>About Me</h2>
       </div>
       <div class="sidebarContentContainer" onclick="scrollToSection('projectsTitle')">
-        <i class="fa-solid fa-newspaper"></i>
+        <i class="fa-solid fa-note-sticky"></i>
         <h2>Projects</h2>
       </div>
       <div class="sidebarContentContainer" onclick="scrollToSection('contactTitle')">
