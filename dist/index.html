@@ -6,6 +6,7 @@
   <meta charset="utf-8">
   <title>Tayven Stover</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tayven Stover's personal portfolio.">
   <link rel="stylesheet" href="Stylesheets/master.css">
   <script src="https://kit.fontawesome.com/382b2907de.js" crossorigin="anonymous"></script>
 </head>
@@ -15,7 +16,10 @@
     <div class="leadContainer">
       <h1 id="pageTitle"><u>Tayven Stover</u></h1>
       <p>Programmer - Student - Tutor</p>
-      <img src="images/Me.jpeg" alt="A picture of me." style="width: 35%; filter: grayscale(100%);">
+      <div class="personal-img-container">
+        <img src="images/Me.jpeg" alt="A picture of me.">
+        <div></div>
+      </div>
     </div>
     <div class="aboutContainer">
       <h1 id="aboutTitle">About me</h1>
@@ -136,21 +140,23 @@
     <div id="sidebar-menu-button" class="sidebar-menu-button-closed" onclick="handleSidebarMenuButtonClick()">
       <i class="fa-solid fa-bars"></i>
     </div>
-    <div class="sidebarContentContainer" onclick="scrollToSection('pageTitle')">
-      <i class="fa-solid fa-house"></i>
-      <h2>Home</h2>
-    </div>
-    <div class="sidebarContentContainer" onclick="scrollToSection('aboutTitle')">
-      <i class="fa-solid fa-user"></i>
-      <h2>About Me</h2>
-    </div>
-    <div class="sidebarContentContainer" onclick="scrollToSection('projectsTitle')">
-      <i class="fa-solid fa-newspaper"></i>
-      <h2>Projects</h2>
-    </div>
-    <div class="sidebarContentContainer" onclick="scrollToSection('contactTitle')">
-      <i class="fa-solid fa-envelope"></i>
-      <h2>Contact</h2>
+    <div class="sidebar-nav-container">
+      <div class="sidebarContentContainer" onclick="scrollToSection('pageTitle')">
+        <i class="fa-solid fa-house"></i>
+        <h2>Home</h2>
+      </div>
+      <div class="sidebarContentContainer" onclick="scrollToSection('aboutTitle')">
+        <i class="fa-solid fa-user"></i>
+        <h2>About Me</h2>
+      </div>
+      <div class="sidebarContentContainer" onclick="scrollToSection('projectsTitle')">
+        <i class="fa-solid fa-newspaper"></i>
+        <h2>Projects</h2>
+      </div>
+      <div class="sidebarContentContainer" onclick="scrollToSection('contactTitle')">
+        <i class="fa-solid fa-envelope"></i>
+        <h2>Contact</h2>
+      </div>
     </div>
   </div>
   <script src="scripts/engine.js" charset="utf-8"></script>
