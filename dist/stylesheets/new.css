@@ -45,25 +45,24 @@ body {
     background: rgb(0, 162, 255);
 }
 
-.divider {
-    width: 2px;
-    height: 20px;
-    background: rgb(0, 162, 255);
+.bullet {
+    color: rgb(0, 162, 255);
 }
 
-.controller-container p {
+.slide-selector {
     transition: .5s;
     margin: 0;
     cursor: pointer;
-    -webkit-text-decoration: underline rgb(0, 162, 255);
-    text-decoration: underline rgb(0, 162, 255);
-    white-space: nowrap
+    white-space: no-wrap;
+    -webkit-text-decoration: underline;
+    text-decoration: underline;
+    text-decoration-color: rgba(0, 162, 255, 0);
 }
 
-.controller-container i:hover {
-    color: rgb(0, 162, 255);
+.slide-selector:hover {
+    text-decoration-color: rgba(0, 162, 255, 1);
 }
 
 .active-slide-selector {
-    color: rgb(0, 162, 255);
+    text-decoration-color: rgb(0, 162, 255);
 }
