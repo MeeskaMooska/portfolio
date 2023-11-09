@@ -307,6 +307,10 @@ hr {
   cursor: pointer;
 }
 
+#sidebar a {
+  color: white;
+}
+
 .sidebar-nav-container {
   display: flex;
   flex-direction: column;

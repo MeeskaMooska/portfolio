@@ -68,7 +68,7 @@
     width: 2px;
     height: calc(100% - 40px);
     position: absolute;
-    top: 20px;
+    top: 11px;
     left: 20px;
     display: flex;
     flex-direction: column;
@@ -90,6 +90,7 @@
 
 .version-text-container span {
     color: rgb(0, 162, 255);
+    -webkit-text-decoration: underline rgb(0, 162, 255);
     text-decoration: underline rgb(0, 162, 255);
     text-underline-offset: 2px;
 }
@@ -108,7 +109,7 @@
 
 .socials-container {
     position: absolute;
-    top: 20px;
+    top: 11px;
     left: 11px;
     display: flex;
     flex-direction: row;

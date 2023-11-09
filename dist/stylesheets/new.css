@@ -55,6 +55,7 @@ body {
     transition: .5s;
     margin: 0;
     cursor: pointer;
+    -webkit-text-decoration: underline rgb(0, 162, 255);
     text-decoration: underline rgb(0, 162, 255);
     white-space: nowrap
 }
