@@ -37,14 +37,21 @@ setInterval(function () {
     prevSpeed = speed;
 }, 100);
 
-/* 
+
 if (window.screen.width < 600) {
+    lineTwo = document.getElementById('version-line-two');
     themeBox = document.getElementById('theme-box');
+    
     versionContainer = document.getElementById('version-container');
     document.body.removeChild(themeBox);
     versionContainer.appendChild(themeBox);
+
+    flexLine = document.createElement('div');
+    flexLine.className = 'version-line-one';
+
+    versionContainer.appendChild(flexLine);
+    
 }
-*/
 
 const themeIndicator = document.getElementById('theme-indicator')
 const darkIndicator = document.getElementById('dark-indicator')
