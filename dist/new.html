@@ -17,7 +17,7 @@
             <h1 id="title-last-name" class="title-name">Stover</h1>
             <div class="title-underline"></div>
         </div>
-        <div class="version-container">
+        <div class="version-container" id="version-container">
             <div class="version-line-one"></div>
             <div class="version-text-container">
                 <p>Version <span>2.0</span></p>
@@ -42,19 +42,18 @@
         <p class="bullet">•</p>
         <p class="slide-selector">Reach Out</p>
     </div>
-    <div class="theme-box">
-        <p class="active-theme-indicator">LIGHT</p>
+    <div class="theme-box" id="theme-box">
+        <p  id="light-indicator" style="color: var(--accent-color)">LIGHT</p>
         <div class="theme-toggle-box" onclick="handleThemeToggle()">
             <div class="theme-toggle-container">
                 <div id="theme-indicator">
-
+                    <div id="moon-elipse"></div>
                 </div>
             </div>
         </div>
-        <p>DARK</p>
+        <p id="dark-indicator">DARK</p>
     </div>
     <script src="scripts/new.js"></script>
     <script src="https://kit.fontawesome.com/382b2907de.js" crossorigin="anonymous"></script>
 </body>
-
 </html>
