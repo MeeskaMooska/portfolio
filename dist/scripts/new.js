@@ -1,21 +1,34 @@
+// Page variables
 const overlay = document.getElementById('overlay');
-overlay.style.backdropFilter = 'blur(2px)';
 var prevEvent, currentEvent;
-document.documentElement.onmousemove = function (event) {
-    currentEvent = event;
-}
 let theme = 0;
 let deviceSize = 'desktop'
-
-if (window.screen.width < 600) {
-    deviceSize = 'mobile'
-}
-
 const deviceSizeSettings = {
     'mobile' : ['top: 52%', 'top: 8%'],
     'desktop' : ['left: 52%', 'left: 8%']
 }
+let activeSlide = 'title-slide';
+let slides = {
+    0: 'title-slide',
+    1: 'about-slide',
+    2: 'projects-slide',
+    3: 'contact-slide'
+}
 
+// Sets the initial blur effect.
+overlay.style.backdropFilter = 'blur(2px)';
+
+// Checks screen size on load.
+if (window.screen.width < 600) {
+    deviceSize = 'mobile'
+}
+
+// Tracks the cursor's position.
+document.documentElement.onmousemove = function (event) {
+    currentEvent = event;
+}
+
+// Tracks the speed of the cursor and applies a blur effect to the background based on the speed.
 // Credit to: https://codepen.io/zFunx on codepen
 setInterval(function () {
     if (prevEvent && currentEvent) {
@@ -38,27 +51,30 @@ setInterval(function () {
 }, 100);
 
 
+
+// Adjusts location of theme toggle on mobile.
 if (window.screen.width < 600) {
+    // Variables
     lineTwo = document.getElementById('version-line-two');
     themeBox = document.getElementById('theme-box');
-    
     versionContainer = document.getElementById('version-container');
+    
+    // Remove and append theme box
     document.body.removeChild(themeBox);
     versionContainer.appendChild(themeBox);
 
+    // Create new element to fill space
     flexLine = document.createElement('div');
     flexLine.className = 'version-line-one';
-
     versionContainer.appendChild(flexLine);
-    
 }
 
+// Variables
 const themeIndicator = document.getElementById('theme-indicator')
 const darkIndicator = document.getElementById('dark-indicator')
 const lightIndicator = document.getElementById('light-indicator')
 const moonElipse = document.getElementById('moon-elipse')
 function handleThemeToggle() {
-    console.log(deviceSizeSettings[deviceSize])
     if (theme === 0) {
         document.documentElement.setAttribute('data-theme', 'dark')
         lightIndicator.style.color = 'white'
@@ -74,4 +90,37 @@ function handleThemeToggle() {
         moonElipse.style.background = 'white'
         theme = 0
     }
+}
+
+/*function handleSlideChangeRequest(destination) {
+    document.getElementById(activeSlide).style.left = '-100%';
+    document.getElementById(destination).style.left = '0%';
+}*/
+
+const navBox = document.getElementById('nav-box')
+const navUnderline = document.getElementById('nav-underline')
+const titleSlideSelector = document.getElementById('title-slide-selector')
+const aboutSlideSelector = document.getElementById('about-slide-selector')
+const projectsSlideSelector = document.getElementById('projects-slide-selector')
+const contactSlideSelector = document.getElementById('contact-slide-selector')
+const underlinePaddingOffset = 4
+const slidesInfo = {
+  'title-slide': titleSlideSelector,
+  'about-slide': aboutSlideSelector,
+  'projects-slide': projectsSlideSelector,
+  'contact-slide': contactSlideSelector,
+}
+
+navUnderline.style.width = titleSlideSelector.offsetWidth + 'px'
+navUnderline.style.transition = '.3s'
+
+function handleSlideChangeRequest(destination) {
+  navUnderline.style.width = slidesInfo[destination].offsetWidth + 'px'
+  navUnderline.style.left = calculateNavSelectorPosition(slidesInfo[destination]) -underlinePaddingOffset + 'px'
+}
+
+function calculateNavSelectorPosition(selector) {
+  let boxPos = navBox.getBoundingClientRect()
+  let selectorPos = selector.getBoundingClientRect()
+  return selectorPos.x - boxPos.x
 }

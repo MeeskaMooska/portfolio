@@ -7,6 +7,7 @@
     <title>Tayven</title>
     <link rel="stylesheet" href="stylesheets/new.css">
     <link rel="stylesheet" href="stylesheets/title-page.css">
+    <link rel="stylesheet" href="stylesheets/about-page.css">
 </head>
 
 <body>
@@ -17,33 +18,43 @@
             <h1 id="title-last-name" class="title-name">Stover</h1>
             <div class="title-underline"></div>
         </div>
-        <div class="version-container" id="version-container">
-            <div class="version-line-one"></div>
-            <div class="version-text-container">
-                <p class="version-text">Version <span>2.0</span></p>
-            </div>
-            <div class="version-line-two" id="version-line-two"></div>
-        </div>
-        <div class="socials-container">
-            <div></div>
-            <p>My Socials:</p>
-            <i class="fa-brands fa-github"></i>
-            <i class="fa-brands fa-facebook"></i>
-            <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-x-twitter"></i>
-        </div>
     </div>
-    <div class="controller-container">
-        <p class="active-slide-selector slide-selector">Home</p>
-        <div class="hyphen"></div>
-        <p class="slide-selector">About</p>
-        <p class="bullet">•</p>
-        <p class="slide-selector">Projects</p>
-        <p class="bullet">•</p>
-        <p class="slide-selector">Reach Out</p>
+    <div class="slide" id="about-slide">
+        <p>about slide</p>
+    </div>
+    <div class="version-container" id="version-container">
+        <div class="version-line-one"></div>
+        <div class="version-text-container">
+            <p class="version-text">Version <span>2.0</span></p>
+        </div>
+        <div class="version-line-two" id="version-line-two"></div>
+    </div>
+    <div class="socials-container">
+        <div></div>
+        <p>My Socials:</p>
+        <i class="fa-brands fa-github"></i>
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-x-twitter"></i>
+    </div>
+    <div id="nav-box">
+        <div class="controller-container">
+            <button class="active-slide-selector slide-selector" onclick="handleSlideChangeRequest('title-slide')"
+                id="title-slide-selector">Home</button>
+            <div class="hyphen"></div>
+            <button class="slide-selector" onclick="handleSlideChangeRequest('about-slide')" id="about-slide-selector">About
+            </button>
+            <p class="bullet">•</p>
+            <button class="slide-selector" onclick="handleSlideChangeRequest('projects-slide')" id="projects-slide-selector">
+                Projects</button>
+            <p class="bullet">•</p>
+            <button class="slide-selector" onclick="handleSlideChangeRequest('contact-slide')" id="contact-slide-selector">
+                Reach Out</button>
+        </div>
+        <div id="nav-underline"></div>
     </div>
     <div class="theme-box" id="theme-box">
-        <p  id="light-indicator" style="color: var(--accent-color)">LIGHT</p>
+        <p id="light-indicator" style="color: var(--accent-color)">LIGHT</p>
         <div class="theme-toggle-box" onclick="handleThemeToggle()">
             <div class="theme-toggle-container">
                 <div id="theme-indicator">
@@ -56,4 +67,5 @@
     <script src="scripts/new.js"></script>
     <script src="https://kit.fontawesome.com/382b2907de.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
