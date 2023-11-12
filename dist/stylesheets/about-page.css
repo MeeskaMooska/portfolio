@@ -1,3 +1,57 @@
 #about-slide {
     left: 100%;
 }
+
+.about-slide-text-container {
+    position: absolute;
+    width: calc(100% - 100px);
+    height: calc(100% - 100px);
+    top: 40px;
+    left: 50px;
+    overflow: scroll;
+}
+
+#about-slide h1 {
+    margin: 0;
+    font-weight: 400;
+    font-size: 2em;
+}
+
+.expertise-section {
+    margin: 15px 0px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.testimonial-section {
+    margin-top: 15px;
+    border: solid 2px var(--accent-color);
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.testimonial-commentor {
+    font-weight: 400;
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.testimonial-comment {
+    font-weight: 300;
+    font-size: 1.1em;
+    margin: 8px;
+}
+
+.testimonial-rating {
+    font-weight: 400;
+    font-size: 1.1em;
+    margin: 10px 0px;
+}
+
+@media screen and (max-width: 540px) {
+    #about-slide h1 {
+        font-size: 1.3em;
+    }
+}

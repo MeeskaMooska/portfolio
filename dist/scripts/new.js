@@ -7,7 +7,6 @@ const deviceSizeSettings = {
     'mobile': ['top: 52%', 'top: 8%'],
     'desktop': ['left: 52%', 'left: 8%']
 }
-let activeSlide = 'title-slide';
 
 // Sets the initial blur effect.
 overlay.style.backdropFilter = 'blur(2px)';
@@ -17,13 +16,13 @@ if (window.screen.width < 600) {
     deviceSize = 'mobile'
 }
 
+// Credit to: https://codepen.io/zFunx on codepen.io
 // Tracks the cursor's position.
 document.documentElement.onmousemove = function (event) {
     currentEvent = event;
 }
 
 // Tracks the speed of the cursor and applies a blur effect to the background based on the speed.
-// Credit to: https://codepen.io/zFunx on codepen
 setInterval(function () {
     if (prevEvent && currentEvent) {
         var movementX = Math.abs(currentEvent.screenX - prevEvent.screenX);
@@ -43,6 +42,7 @@ setInterval(function () {
     prevEvent = currentEvent;
     prevSpeed = speed;
 }, 100);
+// End of credit
 
 // Adjusts location of theme toggle on mobile.
 if (window.screen.width < 600) {
@@ -84,11 +84,6 @@ function handleThemeToggle() {
     }
 }
 
-/*function handleSlideChangeRequest(destination) {
-    document.getElementById(activeSlide).style.left = '-100%';
-    document.getElementById(destination).style.left = '0%';
-}*/
-
 const navBox = document.getElementById('nav-box')
 const navUnderline = document.getElementById('nav-underline')
 const titleSlideSelector = document.getElementById('title-slide-selector')
@@ -110,7 +105,7 @@ const slidesInfo = {
 let slidePositionOffset = 0;
 
 navUnderline.style.width = titleSlideSelector.offsetWidth + 'px'
-navUnderline.style.transition = '.3s'
+navUnderline.style.transition = '1s'
 
 function handleSlideChangeRequest(destination) {
     // Re-Position the underline

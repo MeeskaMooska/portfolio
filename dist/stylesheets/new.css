@@ -113,6 +113,7 @@ body::before {
 }
 
 .slide-selector {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     transition: .5s;
     margin: 0;
     cursor: pointer;
@@ -290,14 +291,9 @@ body::before {
 .socials-container i {
     transition: .5s;
     cursor: pointer;
+    color: var(--text-color-normal)
 }
 
 .socials-container i:hover {
     color: rgb(0, 162, 255);
-}
-
-@media screen and (max-width: 540px) {
-    .title-name {
-        font-size: 1.3em;
-    }
 }
