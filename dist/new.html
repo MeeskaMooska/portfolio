@@ -8,19 +8,29 @@
     <link rel="stylesheet" href="stylesheets/new.css">
     <link rel="stylesheet" href="stylesheets/title-page.css">
     <link rel="stylesheet" href="stylesheets/about-page.css">
+    <link rel="stylesheet" href="stylesheets/projects-page.css">
+    <link rel="stylesheet" href="stylesheets/contact-page.css">
 </head>
 
 <body>
     <div class="overlay" id="overlay"></div>
-    <div class="slide" id="title-slide">
-        <div class="title-container">
-            <h1 id="title-first-name" class="title-name">Tayven</h1>
-            <h1 id="title-last-name" class="title-name">Stover</h1>
-            <div class="title-underline"></div>
+    <div class="slide-container">
+        <div class="slide" id="title-slide">
+            <div class="title-container">
+                <h1 id="title-first-name" class="title-name">Tayven</h1>
+                <h1 id="title-last-name" class="title-name">Stover</h1>
+                <div class="title-underline"></div>
+            </div>
         </div>
-    </div>
-    <div class="slide" id="about-slide">
-        <p>about slide</p>
+        <div class="slide" id="about-slide">
+            <p>about slide</p>
+        </div>
+        <div class="slide" id="projects-slide">
+            <p>projects slide</p>
+        </div>
+        <div class="slide" id="contact-slide">
+            <p>contact slide</p>
+        </div>
     </div>
     <div class="version-container" id="version-container">
         <div class="version-line-one"></div>
@@ -42,13 +52,16 @@
             <button class="active-slide-selector slide-selector" onclick="handleSlideChangeRequest('title-slide')"
                 id="title-slide-selector">Home</button>
             <div class="hyphen"></div>
-            <button class="slide-selector" onclick="handleSlideChangeRequest('about-slide')" id="about-slide-selector">About
+            <button class="slide-selector" onclick="handleSlideChangeRequest('about-slide')"
+                id="about-slide-selector">About
             </button>
             <p class="bullet">•</p>
-            <button class="slide-selector" onclick="handleSlideChangeRequest('projects-slide')" id="projects-slide-selector">
+            <button class="slide-selector" onclick="handleSlideChangeRequest('projects-slide')"
+                id="projects-slide-selector">
                 Projects</button>
             <p class="bullet">•</p>
-            <button class="slide-selector" onclick="handleSlideChangeRequest('contact-slide')" id="contact-slide-selector">
+            <button class="slide-selector" onclick="handleSlideChangeRequest('contact-slide')"
+                id="contact-slide-selector">
                 Reach Out</button>
         </div>
         <div id="nav-underline"></div>

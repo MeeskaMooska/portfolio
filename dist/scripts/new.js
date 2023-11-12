@@ -4,16 +4,10 @@ var prevEvent, currentEvent;
 let theme = 0;
 let deviceSize = 'desktop'
 const deviceSizeSettings = {
-    'mobile' : ['top: 52%', 'top: 8%'],
-    'desktop' : ['left: 52%', 'left: 8%']
+    'mobile': ['top: 52%', 'top: 8%'],
+    'desktop': ['left: 52%', 'left: 8%']
 }
 let activeSlide = 'title-slide';
-let slides = {
-    0: 'title-slide',
-    1: 'about-slide',
-    2: 'projects-slide',
-    3: 'contact-slide'
-}
 
 // Sets the initial blur effect.
 overlay.style.backdropFilter = 'blur(2px)';
@@ -50,15 +44,13 @@ setInterval(function () {
     prevSpeed = speed;
 }, 100);
 
-
-
 // Adjusts location of theme toggle on mobile.
 if (window.screen.width < 600) {
     // Variables
     lineTwo = document.getElementById('version-line-two');
     themeBox = document.getElementById('theme-box');
     versionContainer = document.getElementById('version-container');
-    
+
     // Remove and append theme box
     document.body.removeChild(themeBox);
     versionContainer.appendChild(themeBox);
@@ -103,24 +95,36 @@ const titleSlideSelector = document.getElementById('title-slide-selector')
 const aboutSlideSelector = document.getElementById('about-slide-selector')
 const projectsSlideSelector = document.getElementById('projects-slide-selector')
 const contactSlideSelector = document.getElementById('contact-slide-selector')
+const titleSlide = document.getElementById('title-slide')
+const aboutSlide = document.getElementById('about-slide')
+const projectsSlide = document.getElementById('projects-slide')
+const contactSlide = document.getElementById('contact-slide')
+const slides = [titleSlide, aboutSlide, projectsSlide, contactSlide]
 const underlinePaddingOffset = 4
 const slidesInfo = {
-  'title-slide': titleSlideSelector,
-  'about-slide': aboutSlideSelector,
-  'projects-slide': projectsSlideSelector,
-  'contact-slide': contactSlideSelector,
+    'title-slide': [titleSlideSelector, [0, 100, 200, 300]],
+    'about-slide': [aboutSlideSelector, [-100, 0, 100, 200]],
+    'projects-slide': [projectsSlideSelector, [-200, -100, 0, 100]],
+    'contact-slide': [contactSlideSelector, [-300, -200, -100, 0]],
 }
+let slidePositionOffset = 0;
 
 navUnderline.style.width = titleSlideSelector.offsetWidth + 'px'
 navUnderline.style.transition = '.3s'
 
 function handleSlideChangeRequest(destination) {
-  navUnderline.style.width = slidesInfo[destination].offsetWidth + 'px'
-  navUnderline.style.left = calculateNavSelectorPosition(slidesInfo[destination]) -underlinePaddingOffset + 'px'
+    // Re-Position the underline
+    navUnderline.style.width = slidesInfo[destination][0].offsetWidth + 'px'
+    navUnderline.style.left = calculateNavSelectorPosition(slidesInfo[destination][0]) - underlinePaddingOffset + 'px'
+
+    // Re-Position the slides
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.left = slidesInfo[destination][1][i] + '%' //+ slidePositionOffset + '%'
+    }
 }
 
 function calculateNavSelectorPosition(selector) {
-  let boxPos = navBox.getBoundingClientRect()
-  let selectorPos = selector.getBoundingClientRect()
-  return selectorPos.x - boxPos.x
+    let boxPos = navBox.getBoundingClientRect()
+    let selectorPos = selector.getBoundingClientRect()
+    return selectorPos.x - boxPos.x
 }
