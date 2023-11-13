@@ -175,35 +175,32 @@ const expandable = document.createElement('div')
 expandable.className = 'expandable'
 const expandableContent = document.createElement('div')
 expandableContent.className = 'expandable-content'
-
-let expandableTitle
-let expandableDescription
-let expandableLink
-let expandableLinkList = ''
-expandableContent.innerHTML = `
-<div class="expandable-content">
-  <div class="expandable-header">
-    <h2 class="expandable-title">${expandableTitle}</h2>
-    <p class="expandable-xmark">x</p>
-  </div>
-  <p class="expandable-description">${expandableDescription}</p>
-  <div class="expandable-link-container">
-  ${expandableLinkList}
-  </div>
-</div>
-`
-
+expandableXmark = document.createElement('i')
+expandableXmark.id = 'expandable-xmark'
+expandableXmark.className = 'fa-solid fa-xmark expandable-xmark'
+expandableXmark.onclick = closeExpandable
+expandableContent.innerHTML = 'nothing to see here...'
 document.body.appendChild(expandable)
 expandable.appendChild(expandableContent)
 
 // Expand expertise cards
-function openExpandable(el) {
+function openExpandable(expertiseClickable) {
+    console.log(expertiseClickable.dataset)
+    let expertiseTitle = expertiseClickable.getElementsByClassName('expertise-title')[0].innerHTML
+    expandableContent.innerHTML = `
+        <div class="expandable-header">
+            <h2 class="expandable-title">${expertiseTitle}</h2>
+            ${expandableXmark.outerHTML}
+        </div>
+        <p class="expandable-description">${expertiseClickable.dataset.description}</p>
+        <p class="expandable-projects-section">Check out my projects utilizing: ${expertiseClickable.dataset.projectssection}.</p>
+    `
     expandable.style.width = '100%'
     expandable.style.height = '100%'
 }
 
 function closeExpandable(event) {
-    if (event.target === expandable) {
+    if (event.target === expandable || event.target.id === expandableXmark.id) {
         expandable.style.width = '0%'
         expandable.style.height = '0%'
     }

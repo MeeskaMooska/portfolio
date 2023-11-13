@@ -39,12 +39,28 @@
     border: solid 2px var(--accent-color);
 }
 
-.expertise-expandable {
-    transition: 1s;
+.expertise-clickable {
+    transition: .3s;
     cursor: pointer;
-    padding: 8px;
+    padding: 0px;
     background: transparent;
     border: solid 2px var(--accent-color);
+    color: var(--text-color-normal);
+}
+
+.expertise-title {
+    margin: 0;
+    padding: 10px;
+    font-weight: 300;
+    font-size: 1em;
+}
+
+.expertise-clickable:hover {
+    color: var(--accent-color);
+}
+
+.expertise-description {
+    display: none;
 }
 
 .expandable {
@@ -56,22 +72,58 @@
     height: 0;
     transform: translate(-50%, -50%);
     z-index: 100;
-    transition: 1s;
-    background: var(--expandable-background);
+    transition: .5s;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .expandable-content {
+    outline: none;
     border: solid 2px var(--accent-color);
     background: var(--page-background);
-    width: 300px;
-    height: 300px;
+    width: 60%;
+    height: fit-content;
+}
+
+@media screen and (max-width: 800px) {
+    .expandable-content {
+        width: calc(80% - 40px);
+        height: fit-content;
+    }
+    
+}
+
+@media screen and (max-width: 540px) {
+    .expandable-content {
+        width: calc(100% - 40px);
+        height: fit-content;
+    }
+    
+}
+
+.expandable-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .expandable-title {
-    margin: 0;
+  margin: 0;
+  padding: 10px;
+}
+
+.expandable-xmark {
+  margin: 0;
+  padding: 10px;
+}
+
+.expandable-description {
+  margin: 10px;
+}
+
+.expandable-projects-section {
+    margin: 10px;
 }
 
 .testimonial-section {

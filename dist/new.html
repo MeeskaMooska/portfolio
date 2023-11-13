@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tayven Stover's personal portfolio.">
+    <meta name="keywords" content="Tayven, Stover, Tayven Stover, tayven stover, programmer, warrenton, VA">
+    <meta name="theme-color" content="white">
     <title>Tayven</title>
     <link rel="stylesheet" href="stylesheets/new.css">
     <link rel="stylesheet" href="stylesheets/title-page.css">
@@ -42,23 +45,60 @@
                     to share my passion for technology and my experiences in the world of programming.</p>
                 <h1>My Skills and Expertise:</h1>
                 <div class="expertise-section">
-                    <div class="expertise-expandable" onclick="openExpandable(this)">
-                        <p class="expandable-title">Test</p>
-                        <div class="click-mask"></div>
+                    <div class="expertise-clickable" onclick="openExpandable(this)" data-description="HTML (Hypertext Markup Language) is the backbone of web
+                    development. It's a standard language used to create the structure and content of web pages.
+                    HTML uses tags to define elements like headings, paragraphs, images, and links. These
+                    elements enable the presentation of text and multimedia on the internet, making it
+                    accessible through web browsers. HTML is essential for building the framework of websites
+                    and is often combined with other technologies, like CSS (Cascading Style Sheets) and
+                    JavaScript, to create visually appealing and interactive web experiences. It's a fundamental
+                    skill for anyone looking to craft content for the World Wide Web." data-projectssection="HTML">
+                        <p class="expertise-title">HTML</p>
                     </div>
-                    <button class="expertise-button">HTML</button>
-                    <button class="expertise-button">JS</button>
-                    <button class="expertise-button">Node</button>
-                    <button class="expertise-button">Prisma</button>
-                    <button class="expertise-button">Netlify</button>
-                    <button class="expertise-button">Netlify Functions</button>
-                    <button class="expertise-button">PlanetScale</button>
-                    <button class="expertise-button">CSS</button>
-                    <button class="expertise-button">AWS Lambda Functions</button>
-                    <button class="expertise-button">Python</button>
-                    <button class="expertise-button">Java</button>
-                    <button class="expertise-button">C++</button>
-                    <button class="expertise-button">C#</button>
+                    <div class="expertise-clickable" onclick="openExpandable(this)" data-description="CSS (Cascading Style Sheets) is the language used to control the presentation and styling of web content. It defines how HTML elements should be displayed, including layout, colors, fonts, and more. CSS is a critical part of web development, allowing you to create visually appealing and responsive web designs. It's essential for ensuring a great user experience and consistent branding on your websites." data-projectssection="CSS">
+                        <p class="expertise-title">CSS</p>
+                    </div>                   
+                    <div class="expertise-clickable" onclick="openExpandable(this)"
+                        data-description="JavaScript is a versatile and essential programming language for web development. It allows you to make web pages interactive and dynamic. With JavaScript, you can create features like form validation, animations, and real-time updates. It's widely supported by web browsers and can be used both on the client side and server side. JavaScript is often combined with HTML and CSS to create engaging and responsive web applications. Whether you're a beginner or an experienced developer, JavaScript is a valuable tool for crafting interactive and user-friendly web experiences."
+                        data-projectssection="JavaScript">
+                        <p class="expertise-title">JavaScript</p>
+                    </div>
+                    <div class="expertise-clickable" onclick="openExpandable(this)" data-description="Node.js is a runtime environment that allows you to run JavaScript on the server side. It's known for its non-blocking, event-driven architecture, making it well-suited for scalable and high-performance applications. With Node.js, you can build web servers, APIs, and various backend services. It's a fundamental technology for full-stack developers and enables you to create server-side logic for your web applications." data-projectssection="Node.js">
+                        <p class="expertise-title">Node.js</p>
+                    </div>
+                    <div class="expertise-clickable" onclick="openExpandable(this)" data-description="React is a popular JavaScript library for building user interfaces. It's known for its component-based architecture, allowing you to create reusable UI elements. React's virtual DOM and one-way data flow optimize performance and enable the creation of interactive and responsive web applications. It's widely used in modern web development, and its ecosystem includes tools like React Router and Redux for routing and state management." data-projectssection="React">
+                        <p class="expertise-title">React</p>
+                    </div>
+                    <div class="expertise-clickable" onclick="openExpandable(this)" data-description="Next.js is a framework built on top of React, designed for server-rendered React applications. It simplifies server-side rendering and routing, making it easier to build SEO-friendly and high-performing web applications. Next.js also provides features like automatic code splitting and hot module replacement. It's an excellent choice for building modern, production-ready web applications with React." data-projectssection="Next.js">
+                        <p class="expertise-title">Next.js</p>
+                    </div>
+                    <div class="expertise-clickable" onclick="openExpandable(this)" data-description="Prisma is a modern database toolkit and ORM (Object-Relational Mapping) for Node.js and TypeScript. It simplifies database access and management by providing a type-safe and auto-generated query API. Prisma is a powerful tool for building and maintaining databases, making data handling in your applications more efficient and developer-friendly." data-projectssection="Prisma">
+                        <p class="expertise-title">Prisma</p>
+                    </div>
+                    <div class="expertise-clickable" onclick="openExpandable(this)" data-description="Netlify is a popular hosting and automation platform for modern web projects. It offers features like continuous deployment, serverless functions, and global content delivery. With Netlify, you can easily deploy and manage web applications, making it a favored choice for developers looking for a straightforward and powerful hosting solution." data-projectssection="Netlify">
+                        <p class="expertise-title">Netlify</p>
+                    </div>
+                    <div class="expertise-clickable" onclick="openExpandable(this)" data-description="Netlify Functions are serverless functions that run on the Netlify platform. They allow you to build serverless APIs and backend services for your web applications. Netlify Functions are powered by AWS Lambda and provide a scalable and cost-effective way to add server-side logic to your projects, making them an excellent choice for creating dynamic web applications." data-projectssection="Netlify Functions">
+                        <p class="expertise-title">Netlify Functions</p>
+                    </div>
+                    <div class="expertise-clickable" onclick="openExpandable(this)" data-description="AWS Lambda Functions are part of Amazon Web Services (AWS) serverless computing. They enable you to run code without provisioning or managing servers. Lambda Functions can be triggered by various AWS services or custom events, making them a powerful tool for building scalable, event-driven applications in the AWS ecosystem." data-projectssection="AWS Lambda Functions">
+                        <p class="expertise-title">AWS Lambda Functions</p>
+                    </div>                                                              
+                    <div class="expertise-clickable" onclick="openExpandable(this)" data-description="PlanetScale is a database management platform designed for modern, scalable applications. It simplifies database scaling, replication, and management, making it a valuable tool for developers working with databases in cloud-native environments. PlanetScale helps ensure high availability and performance for your applications' data storage needs." data-projectssection="PlanetScale">
+                        <p class="expertise-title">PlanetScale</p>
+                    </div> 
+                    <div class="expertise-clickable" onclick="openExpandable(this)" data-description="Python is a versatile and popular programming language known for its simplicity and readability. It's widely used for web development, data analysis, artificial intelligence, and more. Python's extensive libraries and frameworks make it a powerful tool for a wide range of applications, and it's a great choice for both beginners and experienced developers." data-projectssection="Python">
+                        <p class="expertise-title">Python</p>
+                    </div>                  
+                    <div class="expertise-clickable" onclick="openExpandable(this)" data-description="Java is a versatile, platform-independent programming language. It's used for a wide variety of applications, from web and mobile development to enterprise software. Java's strong support for object-oriented programming and its robust ecosystem, including the Java Virtual Machine (JVM), make it a dependable choice for building scalable and high-performance applications." data-projectssection="Java">
+                        <p class="expertise-title">Java</p>
+                    </div>                  
+                    <div class="expertise-clickable" onclick="openExpandable(this)" data-description="C++ is a powerful, general-purpose programming language often used for systems programming, game development, and applications that require high performance. It combines the features of low-level and high-level programming, making it suitable for complex and resource-intensive tasks. C++ is favored by developers looking for fine-grained control over their code and performance optimization." data-projectssection="C++">
+                        <p class="expertise-title">C++</p>
+                    </div>  
+                    <div class="expertise-clickable" onclick="openExpandable(this)" data-description="C# (C-Sharp) is a versatile, object-oriented programming language developed by Microsoft. It's commonly used for developing Windows applications, games, and web services. C# is known for its simplicity, strong typing, and integration with the .NET framework. It's a valuable choice for building a wide range of software, including desktop applications and web services." data-projectssection="C#">
+                        <p class="expertise-title">C#</p>
+                    </div>                    
                 </div>
                 <h1>Testimonials:</h1>
                 <div class="testimonial-section">
@@ -86,10 +126,12 @@
     <div class="socials-container">
         <div></div>
         <p>My Socials:</p>
-        <a href="https://github.com/MeeskaMooska"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=61550989623982"><i class="fa-brands fa-facebook"></i></a>
-        <a href="https://www.instagram.com/stover.tayven/"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://twitter.com/TayvenS"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://github.com/MeeskaMooska" aria-label="Github Link"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61550989623982" aria-label="Facebook Link"><i
+                class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/stover.tayven/" aria-label="Instagram Link"><i
+                class="fa-brands fa-instagram"></i></a>
+        <a href="https://twitter.com/TayvenS" aria-label="Twitter Link"><i class="fa-brands fa-x-twitter"></i></a>
     </div>
     <div id="nav-box">
         <div class="controller-container">
