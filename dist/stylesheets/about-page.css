@@ -84,6 +84,21 @@
     background: var(--page-background);
     width: 60%;
     height: fit-content;
+    background-image: radial-gradient(rgb(0, 162, 255) 1px, transparent 0);
+    background-size: 40px 40px;
+    position: relative;
+}
+
+.expandable-content-container {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.expandable-content-container p {
+    z-index: 10;
+    
 }
 
 @media screen and (max-width: 800px) {
@@ -91,7 +106,7 @@
         width: calc(80% - 40px);
         height: fit-content;
     }
-    
+
 }
 
 @media screen and (max-width: 540px) {
@@ -99,32 +114,35 @@
         width: calc(100% - 40px);
         height: fit-content;
     }
-    
+
 }
 
 .expandable-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .expandable-title {
-  margin: 0;
-  padding: 10px;
+    margin: 0;
+    padding: 10px;
+    z-index: 100;
 }
 
 .expandable-xmark {
-  margin: 0;
-  padding: 10px;
+    margin: 0;
+    padding: 10px;
+    z-index: 100;
 }
 
 .expandable-description {
-  margin: 10px;
+    margin: 10px;
 }
 
 .expandable-projects-section {
     margin: 10px;
 }
+
 
 .testimonial-section {
     margin-top: 15px;

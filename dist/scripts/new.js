@@ -172,10 +172,16 @@ document.addEventListener('touchend', e => {
 })
 
 const expandable = document.createElement('div')
-expandable.className = 'expandable'
+const expandableContentOverlay = document.createElement('div')
 const expandableContent = document.createElement('div')
+
+expandableContentOverlay.className = 'overlay'
+expandableContentOverlay.style.zIndex = '0'
+expandableContentOverlay.style.backdropFilter = 'blur(2px)'
+expandable.className = 'expandable'
 expandableContent.className = 'expandable-content'
-expandableXmark = document.createElement('i')
+
+const expandableXmark = document.createElement('i')
 expandableXmark.id = 'expandable-xmark'
 expandableXmark.className = 'fa-solid fa-xmark expandable-xmark'
 expandableXmark.onclick = closeExpandable
@@ -185,15 +191,17 @@ expandable.appendChild(expandableContent)
 
 // Expand expertise cards
 function openExpandable(expertiseClickable) {
-    console.log(expertiseClickable.dataset)
     let expertiseTitle = expertiseClickable.getElementsByClassName('expertise-title')[0].innerHTML
     expandableContent.innerHTML = `
+        ${expandableContentOverlay.outerHTML}
         <div class="expandable-header">
             <h2 class="expandable-title">${expertiseTitle}</h2>
             ${expandableXmark.outerHTML}
         </div>
-        <p class="expandable-description">${expertiseClickable.dataset.description}</p>
-        <p class="expandable-projects-section">Check out my projects utilizing: ${expertiseClickable.dataset.projectssection}.</p>
+        <div class="expandable-content-container">
+            <p class="expandable-description">${expertiseClickable.dataset.description}</p>
+            <p class="expandable-projects-section">Check out my projects utilizing: ${expertiseClickable.dataset.projectssection}.</p>
+        </div>
     `
     expandable.style.width = '100%'
     expandable.style.height = '100%'
