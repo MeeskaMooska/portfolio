@@ -4,17 +4,25 @@
 
 .about-slide-text-container {
     position: absolute;
-    width: calc(100% - 100px);
+    width: calc(100% - 70px);
     height: calc(100% - 100px);
     top: 40px;
     left: 50px;
     overflow: scroll;
 }
 
-#about-slide h1 {
+.about-slide-text-container h1 {
     margin: 0;
     font-weight: 400;
     font-size: 2em;
+}
+
+.about-slide-text {
+    font-weight: 300;
+    font-size: 1.1em;
+    margin: 20px 0px;
+    line-height: 1.5;
+    text-indent: 30px;
 }
 
 .expertise-section {

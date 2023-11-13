@@ -84,30 +84,42 @@ function handleThemeToggle() {
     }
 }
 
+// Nav variables
 const navBox = document.getElementById('nav-box')
 const navUnderline = document.getElementById('nav-underline')
 const titleSlideSelector = document.getElementById('title-slide-selector')
 const aboutSlideSelector = document.getElementById('about-slide-selector')
 const projectsSlideSelector = document.getElementById('projects-slide-selector')
 const contactSlideSelector = document.getElementById('contact-slide-selector')
+const underlinePaddingOffset = 4
+
+navUnderline.style.width = titleSlideSelector.offsetWidth + 'px'
+navUnderline.style.transition = '1s'
+
+function calculateNavSelectorPosition(selector) {
+    let boxPos = navBox.getBoundingClientRect()
+    let selectorPos = selector.getBoundingClientRect()
+    return selectorPos.x - boxPos.x
+}
+
+// Slide variables
 const titleSlide = document.getElementById('title-slide')
 const aboutSlide = document.getElementById('about-slide')
 const projectsSlide = document.getElementById('projects-slide')
 const contactSlide = document.getElementById('contact-slide')
 const slides = [titleSlide, aboutSlide, projectsSlide, contactSlide]
-const underlinePaddingOffset = 4
 const slidesInfo = {
     'title-slide': [titleSlideSelector, [0, 100, 200, 300]],
     'about-slide': [aboutSlideSelector, [-100, 0, 100, 200]],
     'projects-slide': [projectsSlideSelector, [-200, -100, 0, 100]],
     'contact-slide': [contactSlideSelector, [-300, -200, -100, 0]],
 }
-let slidePositionOffset = 0;
-
-navUnderline.style.width = titleSlideSelector.offsetWidth + 'px'
-navUnderline.style.transition = '1s'
+let activeSlide = 'title-slide'
 
 function handleSlideChangeRequest(destination) {
+    // Change the active slide
+    activeSlide = destination
+
     // Re-Position the underline
     navUnderline.style.width = slidesInfo[destination][0].offsetWidth + 'px'
     navUnderline.style.left = calculateNavSelectorPosition(slidesInfo[destination][0]) - underlinePaddingOffset + 'px'
@@ -118,8 +130,42 @@ function handleSlideChangeRequest(destination) {
     }
 }
 
-function calculateNavSelectorPosition(selector) {
-    let boxPos = navBox.getBoundingClientRect()
-    let selectorPos = selector.getBoundingClientRect()
-    return selectorPos.x - boxPos.x
+let touchstartX = 0
+let touchendX = 0
+let minimumTouchDistance = 60
+
+function determineSlideDestination(direction) {
+    let destination = activeSlide
+    if (direction === 'left') {
+        if (activeSlide === 'title-slide') {
+            destination = 'about-slide'
+        } else if (activeSlide === 'about-slide') {
+            destination = 'projects-slide'
+        } else if (activeSlide === 'projects-slide') {
+            destination = 'contact-slide'
+        }
+    } else if (direction === 'right') {
+        if (activeSlide === 'contact-slide') {
+            destination = 'projects-slide'
+        } else if (activeSlide === 'projects-slide') {
+            destination = 'about-slide'
+        } else if (activeSlide === 'about-slide') {
+            destination = 'title-slide'
+        }
+    }
+    return destination
 }
+
+function checkDirection() {
+    if (touchendX < touchstartX && (touchstartX - touchendX > minimumTouchDistance)) handleSlideChangeRequest(determineSlideDestination('left'))
+    else if (touchendX > touchstartX && (touchendX - touchstartX > minimumTouchDistance)) handleSlideChangeRequest(determineSlideDestination('right'))
+}
+
+document.addEventListener('touchstart', e => {
+    touchstartX = e.changedTouches[0].screenX
+})
+
+document.addEventListener('touchend', e => {
+    touchendX = e.changedTouches[0].screenX
+    checkDirection()
+})
