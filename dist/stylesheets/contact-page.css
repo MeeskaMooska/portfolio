@@ -1,3 +1,133 @@
 #contact-slide {
     left: 300%;
 }
+
+.form-container {
+    border: solid 2px var(--accent-color);
+    background: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 70px);
+    max-width: 600px;
+}
+
+@media screen and (max-width: 670px) {
+    .form-container {
+        left: unset;
+        right: 20px;
+        transform: translate(0%, -50%);
+    }
+    
+}
+
+.contact-info {
+    margin: 20px 20px -10px 20px;
+}
+
+.contact-info h1 {
+    font-weight: 300;
+    color: var(--accent-color);
+    margin: 0;
+    padding: 0;
+}
+
+.contact-info p {
+    margin: 0;
+    padding: 0;
+}
+
+.contact-info a {
+    color: var(--accent-color);
+    text-decoration-color: rgba(0, 0, 0, 0);
+    transition: .3s;
+}
+
+.contact-info a:hover {
+    text-decoration-color: var(--accent-color);
+}
+
+.contact-info i {
+    color: var(--accent-color);
+    padding: 8px 8px 8px 0px;
+}
+
+.form-container form {
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+}
+
+.form-container input {
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+    padding: 10px 5px;
+    border: none;
+    border-bottom: var(--accent-color) 2px solid;
+    background: transparent;
+    font-size: 16px;
+    -webkit-appearance: none;
+    appearance: none;
+    -webkit-border-radius:0px;
+    border-radius: 0px;
+}
+
+.input-label {
+    cursor: text;
+    left: 5px;
+    top: 28px;
+    position: relative;
+    z-index: 100;
+    transition: .3s;
+    color: gray;
+}
+
+.input-label-active {
+    font-size: 12px;
+    top: 0px;
+}
+
+#message {
+    padding: 10px 5px;
+    background: transparent;
+    border: 2px solid var(--accent-color);
+    font-family: Helvetica, sans-serif;
+    width: 100%;
+    resize: none;
+    box-sizing: border-box;
+}
+
+#message::placeholder {
+    color: grey;
+    opacity: 1;
+    transition: .3s;
+}
+
+#message:focus::placeholder {
+    color: var(--accent-color);
+    opacity: 1;
+}
+
+#message:focus::-ms-input-placeholder {
+    color: var(--accent-color);
+  }
+
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    border: solid 2px var(--accent-color);
+    background: transparent;
+    color: var(--accent-color);
+    transition: .3s;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background: var(--accent-color);
+    color: var(--page-background);
+}

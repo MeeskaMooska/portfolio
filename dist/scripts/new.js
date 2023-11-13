@@ -215,3 +215,24 @@ function closeExpandable(event) {
 }
 
 expandable.onclick = closeExpandable
+
+contactForm = document.getElementById('contact-form')
+// Form submission
+contactForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+});
+
+// Form input handlers
+function inputFocusHandler(inputObject) {
+    let inputLabel = inputObject.previousElementSibling
+    inputLabel.classList.add('input-label-active');
+    inputLabel.style.color = 'rgb(0, 162, 255)';
+}
+
+function inputBlurHandler(inputObject) {
+    let inputLabel = inputObject.previousElementSibling;
+    if (inputObject.value === '') {
+        inputLabel.classList.remove('input-label-active');
+    }
+    inputLabel.style.color = 'grey';
+}
