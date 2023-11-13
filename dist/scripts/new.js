@@ -179,6 +179,7 @@ expandableContentOverlay.className = 'overlay'
 expandableContentOverlay.style.zIndex = '0'
 expandableContentOverlay.style.backdropFilter = 'blur(2px)'
 expandable.className = 'expandable'
+expandable.style.width = '100%'
 expandableContent.className = 'expandable-content'
 
 const expandableXmark = document.createElement('i')
@@ -200,7 +201,7 @@ function openExpandable(expertiseClickable) {
         </div>
         <div class="expandable-content-container">
             <p class="expandable-description">${expertiseClickable.dataset.description}</p>
-            <p class="expandable-projects-section">Check out my projects utilizing: ${expertiseClickable.dataset.projectssection}.</p>
+            <p class="expandable-projects-section">Check out my projects utilizing: ${expertiseClickable.dataset.projectssection} here.</p>
         </div>
     `
     expandable.style.width = '100%'
@@ -209,7 +210,6 @@ function openExpandable(expertiseClickable) {
 
 function closeExpandable(event) {
     if (event.target === expandable || event.target.id === expandableXmark.id) {
-        expandable.style.width = '0%'
         expandable.style.height = '0%'
     }
 }

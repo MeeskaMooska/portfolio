@@ -17,6 +17,10 @@
     font-size: 2em;
 }
 
+.about-slide-text-container span {
+    color: var(--accent-color);
+}
+
 .about-slide-text {
     font-weight: 300;
     font-size: 1.1em;
@@ -124,6 +128,7 @@
 }
 
 .expandable-title {
+    font-weight: 400;
     margin: 0;
     padding: 10px;
     z-index: 100;
@@ -131,12 +136,21 @@
 
 .expandable-xmark {
     margin: 0;
-    padding: 10px;
-    z-index: 100;
+    padding: 8px 10px;
+    z-index: 1;
+    transition: .3s;
+    border-radius: 2px;
+    margin-right: 4px;
+}
+
+.expandable-xmark:hover {
+    background: rgba(0, 0, 0, .1);
 }
 
 .expandable-description {
     margin: 10px;
+    font-weight: 300;
+    line-height: 1.5;
 }
 
 .expandable-projects-section {
