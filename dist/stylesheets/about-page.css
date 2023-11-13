@@ -33,6 +33,47 @@
     flex-wrap: wrap;
 }
 
+.expertise-button {
+    padding: 8px;
+    background: transparent;
+    border: solid 2px var(--accent-color);
+}
+
+.expertise-expandable {
+    transition: 1s;
+    cursor: pointer;
+    padding: 8px;
+    background: transparent;
+    border: solid 2px var(--accent-color);
+}
+
+.expandable {
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    transition: 1s;
+    background: var(--expandable-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.expandable-content {
+    border: solid 2px var(--accent-color);
+    background: var(--page-background);
+    width: 300px;
+    height: 300px;
+}
+
+.expandable-title {
+    margin: 0;
+}
+
 .testimonial-section {
     margin-top: 15px;
     border: solid 2px var(--accent-color);

@@ -130,6 +130,7 @@ function handleSlideChangeRequest(destination) {
     }
 }
 
+// Swipe detection
 let touchstartX = 0
 let touchendX = 0
 let minimumTouchDistance = 60
@@ -169,3 +170,43 @@ document.addEventListener('touchend', e => {
     touchendX = e.changedTouches[0].screenX
     checkDirection()
 })
+
+const expandable = document.createElement('div')
+expandable.className = 'expandable'
+const expandableContent = document.createElement('div')
+expandableContent.className = 'expandable-content'
+
+let expandableTitle
+let expandableDescription
+let expandableLink
+let expandableLinkList = ''
+expandableContent.innerHTML = `
+<div class="expandable-content">
+  <div class="expandable-header">
+    <h2 class="expandable-title">${expandableTitle}</h2>
+    <p class="expandable-xmark">x</p>
+  </div>
+  <p class="expandable-description">${expandableDescription}</p>
+  <div class="expandable-link-container">
+  ${expandableLinkList}
+  </div>
+</div>
+`
+
+document.body.appendChild(expandable)
+expandable.appendChild(expandableContent)
+
+// Expand expertise cards
+function openExpandable(el) {
+    expandable.style.width = '100%'
+    expandable.style.height = '100%'
+}
+
+function closeExpandable(event) {
+    if (event.target === expandable) {
+        expandable.style.width = '0%'
+        expandable.style.height = '0%'
+    }
+}
+
+expandable.onclick = closeExpandable

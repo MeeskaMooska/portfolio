@@ -4,17 +4,20 @@
 
 html[data-theme='light'] {
     --page-background: white;
+    --expandable-background: rgba(255, 255, 255, .75);
     --overlay-background: rgba(40, 40, 40, .1);
     --text-color-normal: black;
 }
 
 html[data-theme='dark'] {
     --page-background: black;
+    --expandable-background: rgba(0, 0, 0, .75);
     --overlay-background: rgba(255, 255, 255, .1);
     --text-color-normal: white;
 }
 
-*:focus, *:active {
+*:focus,
+*:active {
     -webkit-tap-highlight-color: transparent;
     outline: none;
     -ms-touch-action: manipulation;
@@ -62,7 +65,7 @@ body::before {
     left: 0%;
     height: 100%;
     width: 100%;
-    overflow:hidden;
+    overflow: hidden;
     z-index: 1;
 }
 
