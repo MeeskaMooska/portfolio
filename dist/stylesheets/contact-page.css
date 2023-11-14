@@ -42,10 +42,12 @@
 .contact-info a {
     color: var(--accent-color);
     text-decoration-color: rgba(0, 0, 0, 0);
+    -webkit-text-decoration-color: rgba(0, 0, 0, 0);
     transition: .3s;
 }
 
 .contact-info a:hover {
+    -webkit-text-decoration-color: var(--accent-color);
     text-decoration-color: var(--accent-color);
 }
 
@@ -101,6 +103,10 @@
     width: 100%;
     resize: none;
     box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+    -webkit-border-radius:0px;
+    border-radius: 0px;
 }
 
 #message::placeholder {
