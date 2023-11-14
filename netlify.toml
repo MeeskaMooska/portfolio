@@ -1,0 +1,8 @@
+[build]
+    publish = "dist/"
+    functions = "serverless/"
+
+[[plugins]]
+package = "@netlify/plugin-sitemap"
+  [plugins.inputs]
+  buildDir = "/dist"

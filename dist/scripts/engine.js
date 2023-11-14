@@ -215,10 +215,35 @@ function closeExpandable(event) {
 
 expandable.onclick = closeExpandable
 
-contactForm = document.getElementById('contact-form')
-// Form submission
-contactForm.addEventListener('submit', function (event) {
+const contactForm = document.getElementById('contact-form');
+
+contactForm.addEventListener('submit', async (event) => {
     event.preventDefault();
+
+    let name = document.getElementById('name').value
+    let email = document.getElementById('email').value
+    let message = document.getElementById('message').value
+
+    const formInfo = {
+        name,
+        email,
+        message,
+    };
+
+    try {
+        const response = await fetch('/.netlify/functions/sendEmail', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formInfo),
+        });
+
+        const data = await response.json();
+        alert(data.message)
+    } catch (error) {
+        alert(error.message)
+    }
 });
 
 // Form input handlers

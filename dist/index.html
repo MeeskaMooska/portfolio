@@ -219,18 +219,18 @@
                     <p><i class="fa-brands fa-instagram"></i>Instagram: <a target="_blank"
                             href="https://www.instagram.com/stover.tayven/">stover.tayven</a></p>
                 </div>
-                <form onsubmit="console.log('hey')" id="contact-form">
+                <form onsubmit="console.log('Form Submitted...')" id="contact-form">
                     <div>
-                        <label for="first-name" class="input-label">Name:</label>
-                        <input type="text" name="first-name" id="first-name" onfocus="inputFocusHandler(this)"
+                        <label for="name" class="input-label">Name:</label>
+                        <input type="text" name="name" id="name" autocomplete="name" onfocus="inputFocusHandler(this)"
                             onblur="inputBlurHandler(this)" required>
                     </div>
                     <div>
-                        <label for="first-name" class="input-label">Email:</label>
-                        <input type="email" name="email" id="email" onfocus="inputFocusHandler(this)"
+                        <label for="email" class="input-label">Email:</label>
+                        <input type="email" name="email" id="email" autocomplete="email" onfocus="inputFocusHandler(this)"
                             onblur="inputBlurHandler(this)" required>
                     </div>
-                    <textarea name="message" id="message" cols="30" rows="4" placeholder="Message"></textarea>
+                    <textarea name="message" id="message" cols="30" rows="4" placeholder="Message" required></textarea>
                     <button type="submit">Send</button>
                 </form>
             </div>
