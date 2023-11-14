@@ -55,6 +55,7 @@
 
 .project-container:hover .project-info {
     letter-spacing: .5px;
+    -webkit-text-decoration-color: var(--accent-color);
     text-decoration-color: var(--accent-color);
 }
 
@@ -63,7 +64,7 @@
     font-weight: 100;
     container-name: project-container;
     transition: .3s;
-    color: black;
+    color: var(--text-color-normal);
     text-align: end;
 }
 
@@ -72,7 +73,7 @@
     margin: 0;
     font-weight: 100;
     transition: .3s;
-    color: black;
+    color: var(--text-color-normal);
     text-decoration: underline;
     text-decoration-color: rgba(0,0,0,0);
     text-align: end;
