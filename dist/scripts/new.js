@@ -201,7 +201,6 @@ function openExpandable(expertiseClickable) {
         </div>
         <div class="expandable-content-container">
             <p class="expandable-description">${expertiseClickable.dataset.description}</p>
-            <p class="expandable-projects-section">Check out my projects utilizing: ${expertiseClickable.dataset.projectssection} here.</p>
         </div>
     `
     expandable.style.width = '100%'
