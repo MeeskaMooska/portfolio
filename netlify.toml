@@ -1,5 +1,7 @@
 [build]
   functions = "serverless/"
+  command = "npm run build"
+  publish = "build"
 
 [[plugins]]
 package = "@netlify/plugin-sitemap"
