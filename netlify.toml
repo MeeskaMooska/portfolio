@@ -1,5 +1,5 @@
 [build]
-    functions = "serverless/"
+  functions = "serverless/"
 
 [[plugins]]
 package = "@netlify/plugin-sitemap"
