@@ -7,3 +7,9 @@
 package = "@netlify/plugin-sitemap"
   [plugins.inputs]
   buildDir = "/dist"
+
+[[redirects]]
+  from = "/doofchat/*"
+  to = "https://doofchat.netlify.app/:splat"
+  status = 200
+  force = true
